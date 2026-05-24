@@ -1,7 +1,15 @@
-torch>=2.0.0
-transformers>=4.30.0
-sentence-transformers>=2.2.2
-numpy>=1.24.0
-pandas>=2.0.0
-scikit-learn>=1.2.0
-notebook>=6.5.0
+# --- Core ML & Data Profiling ---
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+xgboost==2.0.3
+imbalanced-learn==0.12.3  # Required for SMOTE oversampling
+
+# --- NLP & Local LLM Integration ---
+ollama==0.2.1             # Official Ollama Python library
+sentence-transformers==3.0.1  # For semantic query intent routing
+pypdf==4.2.0              # For structural PDF text extraction
+
+# --- Orchestration & Notebooks ---
+jupyter==1.0.0
+requests==2.31.0
