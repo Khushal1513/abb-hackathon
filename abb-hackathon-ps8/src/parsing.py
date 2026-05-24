@@ -27,7 +27,6 @@ class NLUProblemParser:
             "Anomaly Detection",
         ]
 
-        # Embedded reference vectors for similarity calculation
         self.reference_embeddings = self._generate_reference_embeddings()
 
     def _get_embedding(self, text: str) -> np.ndarray:
@@ -66,7 +65,6 @@ class NLUProblemParser:
         best_match = max(scores, key=scores.get)
         confidence = scores[best_match]
 
-        # Evaluate confidence threshold constraint
         status = "SUCCESS" if confidence >= self.confidence_threshold else "CLARIFICATION_REQUIRED"
 
         return {
@@ -94,7 +92,6 @@ class NLUProblemParser:
             ),
         }
 
-        # Simple rule-based slot filling matching specific project tracks
         keywords = [
             "churn", "fraud", "predict", "forecast",
             "maintenance", "anomaly", "temperature",
